@@ -1,4 +1,6 @@
 import {faker} from "@faker-js/faker";
+import HeaderMenuPage from "../pages/HeaderMenuPage";
+import RegisterMenuPage from "../pages/RegisterMenuPage";
 
 const baseUrl = "https://automationteststore.com/"
 const email = faker.internet.email();
@@ -7,10 +9,12 @@ const loginName = faker.internet.userName();
 const password = faker.internet.password();
 
 describe('template spec', () => {
-  it('login test', () => {
+  it('register test', () => {
     cy.visit(baseUrl);
     cy.get('div #customer_menu_top li a').click();
+    // HeaderMenuPage.getLoginBtn().click();
     cy.contains('Continue').click();
+    // RegisterMenuPage.doRegisterFromPOM('John', 'Doe', email, "Street 1", city, 'Cardiff', '123456', loginName, password, password);
     cy.get('[name="firstname"]').type('John');
     cy.get('[name="lastname"]').type('Doe');
     cy.get('#AccountFrm_email').type(email);
@@ -54,8 +58,16 @@ describe('template spec', () => {
 
 it('place order', () => {
   cy.visit(baseUrl);
+  cy.get('div #customer_menu_top li a').click();
+  cy.get("#loginFrm_loginname").type(loginName);
+  cy.get("#loginFrm_password").type(password);
+  cy.get('#loginFrm button').click();
   cy.get('.logo').click();
   cy.get('.pricetag.jumbotron a').eq(0).click();
+  cy.get('.nav.topcart.pull-left').click();
+  cy.get('#cart_checkout1').click();
+  cy.get('#checkout_btn').click();
+  cy.get('.maintext').contains('Your Order Has Been Processed!');
 })
 
   
