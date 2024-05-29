@@ -1,8 +1,9 @@
 import {faker} from "@faker-js/faker";
 import HeaderMenuPage from "../pages/HeaderMenuPage";
 import RegisterMenuPage from "../pages/RegisterMenuPage";
+// import FakerData from "../data/FakerData";
 
-const baseUrl = "https://automationteststore.com/"
+const baseUrl = "https://automationteststore.com/";
 const email = faker.internet.email();
 const city = faker.location.city();
 const loginName = faker.internet.userName();
@@ -11,8 +12,8 @@ const password = faker.internet.password();
 describe('template spec', () => {
   it('register test', () => {
     cy.visit(baseUrl);
-    cy.get('div #customer_menu_top li a').click();
-    // HeaderMenuPage.getLoginBtn().click();
+    // cy.get('div #customer_menu_top li a').click();
+    HeaderMenuPage.getLoginBtn().click();
     cy.contains('Continue').click();
     // RegisterMenuPage.doRegisterFromPOM('John', 'Doe', email, "Street 1", city, 'Cardiff', '123456', loginName, password, password);
     cy.get('[name="firstname"]').type('John');
@@ -28,14 +29,13 @@ describe('template spec', () => {
     cy.get("#AccountFrm_agree").check();
     cy.get('.btn.btn-orange.pull-right').click();
     cy.get('.maintext').contains("Your Account Has Been Created!");
-    console.log(loginName);
-    console.log(password);
 
   });
 
   it('edit account', () => {
     cy.visit(baseUrl);
-    cy.get('div #customer_menu_top li a').click();
+    // cy.get('div #customer_menu_top li a').click();
+    HeaderMenuPage.getLoginBtn().click();
     cy.get("#loginFrm_loginname").type(loginName);
     cy.get("#loginFrm_password").type(password);
     cy.get('#loginFrm button').click();
@@ -47,7 +47,8 @@ describe('template spec', () => {
 
   it('login and logoff', () => {
     cy.visit(baseUrl);
-    cy.get('div #customer_menu_top li a').click();
+    // cy.get('div #customer_menu_top li a').click();
+    HeaderMenuPage.getLoginBtn().click();
     cy.get("#loginFrm_loginname").type(loginName);
     cy.get("#loginFrm_password").type(password);
     cy.get('#loginFrm button').click();
@@ -58,7 +59,8 @@ describe('template spec', () => {
 
 it('place order', () => {
   cy.visit(baseUrl);
-  cy.get('div #customer_menu_top li a').click();
+  // cy.get('div #customer_menu_top li a').click();
+  HeaderMenuPage.getLoginBtn().click();
   cy.get("#loginFrm_loginname").type(loginName);
   cy.get("#loginFrm_password").type(password);
   cy.get('#loginFrm button').click();
