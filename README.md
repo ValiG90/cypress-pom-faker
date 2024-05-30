@@ -1,17 +1,13 @@
-## Projects cover basic actions done on a E-commerce Test Site
+## Automation Project covering basic actions done on a E-commerce Test Site
 
-</br>
-How to run project:
-
-</br>
-Setup
+## Setup
 </br>
 1. Install [NPM] - (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 </br>
 2. Install [Cypress] - npm i cypress
 
-Run Tests
+## Run Tests
 ```sh
-"test:cypress": "npx cypress open --browser chrome cypress/e2e/register.cy.js",
-"test:cypressHeadless": "npx cypress run --browser chrome --headless"
+npm run test:cypress
+npm run test:cypressHeadless
 ```
