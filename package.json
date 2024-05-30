@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:cypress": "npx cypress open --browser chrome cypress/e2e/register.cy.js",
+    "test:cypressHeadless": "npx cypress run --browser chrome --headless"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
-    "cypress": "^13.10.0"
+    "cypress": "^13.10.0",
+    "@testing-library/cypress": "^10.0.1"
   },
   "dependencies": {
-    "@testing-library/cypress": "^10.0.1"
   }
 }
