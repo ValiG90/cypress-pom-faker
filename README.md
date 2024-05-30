@@ -1,8 +1,7 @@
 ## Automation Project covering basic actions done on a E-commerce Test Site
 
 ## Setup
-</br>
-1. Install [Node.js] - (https://nodejs.org/en/download/package-manager)
+T
 </br>
 2. Install [NPM] - (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 </br>
