@@ -1,11 +1,11 @@
-## Automation Project covering basic actions done on a E-commerce Test Site
+## Automation Project covering basic actions done on an E-commerce Test Site
 
 ## Setup
-T
+1. Install [NPM] - (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 </br>
-2. Install [NPM] - (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+2. Install [Cypress] - npm i cypress
 </br>
-3. Install [Cypress] - npm i cypress
+3. Instal [[Faker]([url](https://www.npmjs.com/package/@faker-js/faker))] - npm i @faker-js/faker
 
 ## Run Tests
 ```sh
