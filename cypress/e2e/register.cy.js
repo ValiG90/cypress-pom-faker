@@ -42,9 +42,7 @@ describe("register and e2e test suite", () => {
     cy.get("div.col-md-9 li i.fa.fa-edit").click();
     cy.get("#AccountFrm_firstname").clear().type("NewFirstName");
     cy.get("button.btn.btn-orange.pull-right.lock-on-click").click();
-    cy.get(".alert.alert-success").contains(
-      "Success: Your account has been successfully updated."
-    );
+    cy.get(".alert.alert-success").contains("Success: Your account has been successfully updated.");
   });
 
   it("login and logoff test", () => {
@@ -53,9 +51,7 @@ describe("register and e2e test suite", () => {
     cy.get("#loginFrm_password").type(password);
     cy.get("#loginFrm button").click();
     cy.get(".info_links_footer li ").eq(6).click();
-    cy.get(".mb40 p").contains(
-      "You have been logged off your account. It is now safe to leave the computer."
-    );
+    cy.get(".mb40 p").contains("You have been logged off your account. It is now safe to leave the computer.");
   });
 
   it("place order test", () => {
